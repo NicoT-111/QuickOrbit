@@ -90,12 +90,7 @@ alt="Arrow Right"
 
 <td align="center" width="44%">
 
-<img
-    src="https://img.shields.io/badge/DOWNLOAD-QUICKORBIT-1B6E9B?style=for-the-badge&logo=github&logoColor=FFFFFF&labelColor=04070D"
-    alt="Download QuickOrbit"
-  />
-
-</td>
+https://github.com/NicoT-111/QuickOrbit/releases/download/NicoT111/QuickOrbit.dmg
 
 <td align="center" width="28%">
 
