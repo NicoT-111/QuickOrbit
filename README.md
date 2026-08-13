@@ -90,8 +90,7 @@ alt="Arrow Right"
 
 <td align="center" width="44%">
 
-https://github.com/NicoT-111/QuickOrbit/releases/download/NicoT111/QuickOrbit.dmg
-
+comming soon!!!
 <td align="center" width="28%">
 
 <img
