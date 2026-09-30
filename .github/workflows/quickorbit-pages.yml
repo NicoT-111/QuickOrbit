@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - 'quickorbit-pages.part-*'
+      - 'quickorbit-overlay.part-*'
       - '.github/workflows/quickorbit-pages.yml'
   workflow_dispatch:
 permissions:
@@ -23,8 +24,12 @@ jobs:
       - uses: actions/checkout@v4
       - name: Reassemble and unpack prepared website
         run: |
-          cat quickorbit-pages.part-* > quickorbit-pages.zip
+          cat quickorbit-pages.part-aa quickorbit-pages.part-ab quickorbit-pages.part-ac quickorbit-pages.part-ad > quickorbit-pages.zip
           unzip -q quickorbit-pages.zip -d website
+      - name: Apply the latest website refinements
+        run: |
+          cat quickorbit-overlay.part-* > quickorbit-overlay.zip
+          unzip -oq quickorbit-overlay.zip -d website
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
