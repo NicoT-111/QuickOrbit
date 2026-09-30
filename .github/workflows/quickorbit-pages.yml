@@ -2,7 +2,9 @@ name: Publish QuickOrbit website
 on:
   push:
     branches: [main]
-    paths: [quickorbit-pages.zip, .github/workflows/quickorbit-pages.yml]
+    paths:
+      - 'quickorbit-pages.part-*'
+      - '.github/workflows/quickorbit-pages.yml'
   workflow_dispatch:
 permissions:
   contents: read
@@ -19,8 +21,10 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - name: Unpack prepared website
-        run: unzip -q quickorbit-pages.zip -d website
+      - name: Reassemble and unpack prepared website
+        run: |
+          cat quickorbit-pages.part-* > quickorbit-pages.zip
+          unzip -q quickorbit-pages.zip -d website
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
